@@ -4,7 +4,9 @@ import { useContext } from 'react';
 import { CartContext } from '../contexts/CartContext';
 
 const Item = (props) => {
-  const { removeItem } = useContext(CartContext);
+
+  const { removeItem } = useContext(CartContext); // bunu yazdık.
+
   return (
     <ScCartItem>
       <img src={props.image} alt={`${props.title} book`} />

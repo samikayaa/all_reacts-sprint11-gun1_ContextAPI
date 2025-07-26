@@ -8,12 +8,18 @@ export const useCartContext = useContext(CartContext);
 
 export default function CartContextProvider({ children }) {
 
-    const [cart, useCart] = useState();
+    const [cart, setCart] = useState();
 
 
     const addItem = (item) => {
         // verilen itemi sepete ekle
+        setCart([...cart, item])
     };
+
+    const removeItem = () => {
+        // verilen itemi sepetten çıkar......
+
+    }
 
     return (
         <CartContext.Provider value={{ cart }}>
