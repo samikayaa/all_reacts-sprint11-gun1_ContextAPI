@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Product from './Product';
 import { ProductContext } from '../contexts/ProductContext';
+import { CartContect } from "../contexts/CartContext";
 
 const ScProducts = styled.section`
   display: grid;
@@ -19,7 +20,8 @@ const ScProducts = styled.section`
 `;
 
 const Products = () => {
-  const { products, addItem } = useContext(ProductContext);
+  const { products } = useContext(ProductContext);
+  const { addItem } = useContext(CartContect);
 
   return (
     <ScProducts>

@@ -1,10 +1,9 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { createContext } from "react";
 import { data } from '../data';
 
 
-const ProductContext = createContext();
-export const useProducts = useContext(ProductContext);
+export const ProductContext = createContext();
 
 
 

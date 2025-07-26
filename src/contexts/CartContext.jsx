@@ -1,14 +1,12 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useState } from "react";
 
 
-const CartContext = createContext();
-export const useCartContext = useContext(CartContext);
-
+export const CartContext = createContext();
 
 
 export default function CartContextProvider({ children }) {
 
-    const [cart, setCart] = useState();
+    const [cart, setCart] = useState([]);
 
 
     const addItem = (item) => {
@@ -16,7 +14,7 @@ export default function CartContextProvider({ children }) {
         setCart([...cart, item])
     };
 
-    const removeItem = () => {
+    const removeItem = (id) => {
         // verilen itemi sepetten çıkar......
 
     }
