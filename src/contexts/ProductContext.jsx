@@ -7,7 +7,7 @@ export const ProductContext = createContext();
 
 
 
-export default function ProductContextProvider({ children }) {
+export function ProductContextProvider({ children }) {
 
     const [products, setProducts] = useState(data);
 
