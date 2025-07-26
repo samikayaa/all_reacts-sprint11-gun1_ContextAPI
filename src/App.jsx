@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Route } from 'react-router-dom';
-import { data } from './data';
+
 
 import Navigation from './components/Navigation';
 import Products from './components/Products';
 import ShoppingCart from './components/ShoppingCart';
 import { ProductContextProvider } from "./contexts/ProductContext";
+import { CartContextProvider } from "./contexts/CartContext";
 
 
 function App() {
@@ -18,19 +19,21 @@ function App() {
 
 
   return (
-    <ProductContextProvider>
-      <div className="App">
-        <Navigation cart={cart} />
-        <main className="content">
-          <Route exact path="/">
-            <Products />
-          </Route>
-          <Route path="/cart">
-            <ShoppingCart cart={cart} />
-          </Route>
-        </main>
-      </div>
-    </ProductContextProvider>
+    <CartContextProvider>
+      <ProductContextProvider>
+        <div className="App">
+          <Navigation cart={cart} />
+          <main className="content">
+            <Route exact path="/">
+              <Products />
+            </Route>
+            <Route path="/cart">
+              <ShoppingCart cart={cart} />
+            </Route>
+          </main>
+        </div>
+      </ProductContextProvider>
+    </CartContextProvider>
   );
 }
 
