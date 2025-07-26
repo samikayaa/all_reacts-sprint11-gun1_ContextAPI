@@ -1,17 +1,22 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { createContext } from "react";
 
 
 const ProductContext = createContext();
+export const useProducts = useContext(ProductContext);
+
+
 
 export default function ProductContextProvider({ children }) {
 
     const [products, setProducts] = useState();
 
-
+    const addItem = (product) => {
+        setProducts(product)
+    }
 
     retrun(
-        <ProductContext.Provider value={products}>
+        <ProductContext.Provider value={{ products }}>
             {children}
         </ProductContext.Provider>
     )
