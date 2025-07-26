@@ -10,9 +10,7 @@ import { ProductContextProvider } from "./contexts/ProductContext";
 
 function App() {
 
-  const [products, setProducts] = useState(data);
   const [cart, setCart] = useState([]);
-
 
   const addItem = (item) => {
     // verilen itemi sepete ekle
@@ -25,7 +23,7 @@ function App() {
         <Navigation cart={cart} />
         <main className="content">
           <Route exact path="/">
-            <Products products={products} addItem={addItem} />
+            <Products />
           </Route>
           <Route path="/cart">
             <ShoppingCart cart={cart} />
