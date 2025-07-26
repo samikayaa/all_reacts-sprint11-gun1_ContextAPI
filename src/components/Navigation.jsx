@@ -5,7 +5,9 @@ import { CartContext } from '../contexts/CartContext';
 import { useContext } from 'react';
 
 const Navigation = (props) => {
-  const { cart } = useContext(CartContext);
+
+  const { cart } = useContext(CartContext); //bunu yazdık.
+
   return (
     <ScNav>
       <nav className="content">

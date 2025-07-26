@@ -11,24 +11,17 @@ import { CartContextProvider } from "./contexts/CartContext";
 
 function App() {
 
-  const [cart, setCart] = useState([]);
-
-  const addItem = (item) => {
-    // verilen itemi sepete ekle
-  };
-
-
   return (
     <CartContextProvider>
       <ProductContextProvider>
         <div className="App">
-          <Navigation cart={cart} />
+          <Navigation />
           <main className="content">
             <Route exact path="/">
               <Products />
             </Route>
             <Route path="/cart">
-              <ShoppingCart cart={cart} />
+              <ShoppingCart />
             </Route>
           </main>
         </div>
