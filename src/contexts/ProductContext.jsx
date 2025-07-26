@@ -11,9 +11,9 @@ export default function ProductContextProvider({ children }) {
 
     const [products, setProducts] = useState(data);
 
-    retrun(
+    return (
         <ProductContext.Provider value={{ products }}>
             {children}
         </ProductContext.Provider>
-    )
+    );
 };
